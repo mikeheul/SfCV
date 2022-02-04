@@ -32,7 +32,7 @@ class PersonneType extends AbstractType
                 'label' => 'Adresse email'
             ])
             ->add('telephone', TextType::class, [
-                'label' => 'Téléphone du candidat'
+                'label' => 'Téléphone'
             ])
             ->add('adresse', TextType::class, [])
             ->add('cp', TextType::class, [
