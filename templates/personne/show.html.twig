@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ personne }}{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('personne') }}">Retour</a>
+
+    <h1>{{ personne }}</h1>
+    
+    <a href="{{ path('personne_edit', {id: personne.id}) }}" class="btn btn-primary">Editer</a><br>
+
+    <h3>Coordonnées</h3>
+    <p>
+        <strong>Courriel :</strong> {{ personne.email }} <br>
+        <strong>Téléphone :</strong> {{ personne.telephone }} <br>
+        <strong>Adresse :</strong> {{ personne.adresse }} <br>
+        <strong>Code postal :</strong> {{ personne.cp }} <br>
+        <strong>Ville :</strong> {{ personne.ville }} <br>
+    </p>
+
+    <h3>Expériences professionnelles <span class="badge badge-secondary">{{ personne.experiences | length }}</span></h3>
+    
+    <div id="experiences_show">
+
+        {% for exp in personne.experiences %}
+            <div class="card card-show">
+                <div class="card-header">
+                    {{ exp.titre }} 
+                </div>
+                <div class="card-body">
+                    <p>
+                        Ville : {{ exp.ville }} <br>
+                        Date début : {{ exp.dateDebut | date("d-m-Y") }} <br>
+                        Date fin : {{ exp.dateFin | date("d-m-Y") }}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

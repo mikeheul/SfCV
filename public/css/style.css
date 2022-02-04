@@ -1,0 +1,57 @@
+body {
+    padding: 20px;
+}
+
+#experiences_list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+#experiences_show {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    gap: 20px;
+}
+
+#experiences_list .btn-info {
+    width: 300px;
+}
+
+.btn {
+    margin: 10px 0 10px 0;
+}
+
+.card {
+    width: 80%;
+}
+
+.card.card-show {
+    margin-top: 20px;
+    width: 300px;
+}
+
+.card .card-header {
+    background-color: rgb(53, 53, 53);
+    color: #fff;
+}
+
+.card .card-footer {
+    background-color: rgb(177, 177, 177);
+    color: #fff;
+}
+
+.card .card-body {
+    background: rgb(235, 235, 235);
+}
+
+.badge-secondary {
+    color: #fff;
+    background: rgb(236, 36, 70);
+    font-size: 20px;
+}

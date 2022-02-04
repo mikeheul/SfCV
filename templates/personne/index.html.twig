@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des personnes{% endblock %}
+
+{% block body %}
+
+    <h1>CVThèque</h1>
+
+    <h2>Candidats</h2>
+
+    <a href="{{ path('personne_add')}}" class="btn btn-primary">Ajouter une personne</a><br>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Personne</th>
+                <th>Expériences</th>
+                <th>Editer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for personne in personnes %}
+            <tr>
+                <td>
+                    <a href="{{ path('personne_show', {id:personne.id}) }}">{{ personne }}</a>
+                </td>
+                <td>
+                    {{ personne.experiences | length }}
+                </td>
+                <td>
+                    <a href="{{ path('personne_edit', {id: personne.id}) }}"><i class="fa-regular fa-pen-to-square"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

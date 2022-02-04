@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition{% endblock %}
+
+{% block body %}
+
+    {% if personne is defined %}
+        <a href="{{ path('personne_show', {id: personne.id}) }}">Retour</a>
+        <h1>Editer « {{ personne }} »</h1>
+    {% else %}
+        <a href="{{ path('personne')}}">Retour</a>
+        <h1>Ajouter une personne</h1>
+    {% endif %}
+    
+    {{ form_start(formPersonne) }}
+
+        <h3>Coordonnées</h3>
+
+        {{ form_row(formPersonne.intituleCV) }}
+        <div class="row">
+            <div class="col">{{ form_row(formPersonne.nom) }}</div>
+            <div class="col">{{ form_row(formPersonne.prenom) }}</div>
+        </div>
+        <div class="row">
+            <div class="col">{{ form_row(formPersonne.dateNaissance) }}</div>
+            <div class="col">{{ form_row(formPersonne.email) }}</div>
+            <div class="col">{{ form_row(formPersonne.telephone) }}</div>
+        </div>
+        <div class="row">
+            <div class="col">{{ form_row(formPersonne.adresse) }}</div>
+            <div class="col">{{ form_row(formPersonne.cp) }}</div>
+            <div class="col">{{ form_row(formPersonne.ville) }}</div>
+        </div>
+
+        <h3>Expériences professionnelles</h3>
+        
+        <div class="col-sm-8 col-sm-offset-2" id="experiences_list" data-prototype="{{ form_widget(formPersonne.experiences.vars.prototype)| e('html_attr') }}">
+            {% for row in formPersonne.experiences %}
+                <div class="card">
+                    <div class="card-header">
+                        <strong>{{ row.vars.value.titre ~ ' - ' ~ row.vars.value.ville }}</strong>
+                    </div>
+                    <div class="card-body">
+                        {{ form_row(row) }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {{ form_end(formPersonne) }}
+
+{% endblock %}
