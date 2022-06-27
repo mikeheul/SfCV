@@ -10,4 +10,5 @@
 ![MySQL](https://img.shields.io/static/v1?style=for-the-badge&message=MySQL&color=4479A1&logo=MySQL&logoColor=FFFFFF&label=)
 ![Composer](https://img.shields.io/static/v1?style=for-the-badge&message=Composer&color=885630&logo=Composer&logoColor=FFFFFF&label=)
 
+## Description
 CollectionType Symfony : mini projet afin de montrer l'intérêt des CollectionType sur Symfony à mes apprenants
